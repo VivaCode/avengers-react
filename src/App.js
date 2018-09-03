@@ -1,13 +1,23 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import AvengersList from "./Components/AvengersList";
 
 
 class App extends Component {
   constructor() {
     super ();
     this.state = {
-      avengers: ['Thor', 'Loki', 'Ironman', 'Captain America', 'Hulk', 'Black Widow', 'Hawkeye', 'Scarlet Witch']
+      avengers: [
+                {id:1,name:'Thor'}, 
+                {id:2, name:'Loki'}, 
+                {id:3,name:'Ironman'}, 
+                {id:4, name:'Captain America'}, 
+                {id:5, name:'Hulk'}, 
+                {id:6, name:'Black Widow'}, 
+                {id:7, name:'Hawkeye'}, 
+                {id:8, name:'Scarlet Witch'}
+              ]
     }
   }
   render() {
@@ -17,9 +27,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Avengers: by Emily</h1>
         </header>
-        <p className="App-intro">
-          {this.state.avengers.map(avengers => <div>{avengers}</div>)}
-        </p>
+          <AvengersList avengers={this.state.avengers}/>
       </div>
     );
   }
